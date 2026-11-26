@@ -1,0 +1,18 @@
+# /etc/network/interfaces on the Proxmox host (example)
+auto lo
+iface lo inet loopback
+
+# Onboard Intel I219-V, no longer used. The offload fix stops the e1000e hang if it is ever used again.
+iface nic0 inet manual
+    post-up /usr/sbin/ethtool -K nic0 tso off gso off gro off
+
+# Realtek RTL8125 2.5 GbE card
+iface enp2s0 inet manual
+
+auto vmbr0
+iface vmbr0 inet static
+    address <server-ip>/24
+    gateway <router-ip>
+    bridge-ports enp2s0
+    bridge-stp off
+    bridge-fd 0

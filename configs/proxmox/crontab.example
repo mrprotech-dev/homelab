@@ -1,0 +1,3 @@
+# root crontab on the Proxmox host (example)
+# Nightly copy of the fast share to the HDD. No --delete, so deleted files stay recoverable.
+0 3 * * * rsync -a /mnt/fast/ /mnt/pve/hdd/fast-backup/

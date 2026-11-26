@@ -1,0 +1,3 @@
+# /etc/default/grub (example), then run: update-grub
+# Stops NVMe drives entering deep power states that caused freezes
+GRUB_CMDLINE_LINUX_DEFAULT="quiet nvme_core.default_ps_max_latency_us=0"

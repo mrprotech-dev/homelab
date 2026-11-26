@@ -1,0 +1,41 @@
+# /opt/homepage/config/services.yaml (example, addresses and secrets replaced by placeholders)
+- Infrastructure:
+    - Proxmox:
+        href: https://<server-ip>:8006
+        icon: proxmox.png
+        description: Hypervisor
+        widget:
+          type: proxmox
+          url: https://<server-ip>:8006
+          username: <user>@pam!homepage   # read-only API token (PVEAuditor role)
+          password: <token-secret>
+          node: pve
+    - Router:
+        href: http://<router-ip>
+        icon: mdi-router-wireless
+        description: Router settings
+        siteMonitor: http://<router-ip>
+
+- Services:
+    - Pi-hole:
+        href: http://<pihole-ip>/admin
+        icon: pi-hole.png
+        description: Network-wide ad blocking
+        widget:
+          type: pihole
+          url: http://<pihole-ip>
+          version: 6
+          key: <pihole-app-password>
+    - Open WebUI:
+        href: http://<openwebui-ip>:8080
+        icon: open-webui.png
+        description: Local AI chat
+        siteMonitor: http://<openwebui-ip>:8080
+    - Grafana:
+        href: http://<grafana-ip>:3000
+        icon: grafana.png
+        description: Trading bot dashboard
+        siteMonitor: http://<grafana-ip>:3000
+    - File Share:
+        icon: mdi-folder-network
+        description: 'SMB share on the server'

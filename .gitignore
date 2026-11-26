@@ -1,0 +1,6 @@
+# Never commit real secrets or live configs
+*.env
+*secret*
+*token*
+*.key
+id_*

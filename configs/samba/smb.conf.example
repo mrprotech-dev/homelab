@@ -1,0 +1,14 @@
+# Share sections added to /etc/samba/smb.conf (example)
+# Replace <user> with your Samba user (created with smbpasswd -a <user>)
+
+[share]
+   path = /mnt/pve/hdd/share
+   valid users = <user>
+   read only = no
+   veto files = /lost+found/
+
+[fast]
+   path = /mnt/fast
+   valid users = <user>
+   read only = no
+   veto files = /lost+found/
